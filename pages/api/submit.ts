@@ -1,4 +1,4 @@
-import {NextApiRequest, NextApiResponse} from 'next';
+//import {NextApiRequest, NextApiResponse} from 'next';
 import OpenAI from 'openai';
 
 /*const configuration = new Configuration({
@@ -12,17 +12,14 @@ const openai = new OpenAI({
   apiKey: process.env["OPENAI_API_KEY"],
 });
 
-export default async function handler(
-  req: NextApiRequest,
-  res: NextApiResponse,
-) {
-  console.log("prompt: " + req.body);
-  console.log("prompt1: " + req.body.prompt);
-  if (req.body !== undefined) {
+export default async function handler(req, res) {
+  //console.log("prompt: " + req.body);
+  //console.log("prompt1: " + req.body.prompt);
+  if (req.body.prompt !== undefined) {
     const completion = await openai.chat.completions.create({
       model: "gpt-3.5-turbo",
-      //messages: [{ role: "user", content: `${req.body.prompt}` }],
-      messages: [{ role: "user", content: "1 day meal for pescatarian" }],
+      messages: [{ role: "user", content: `${req.body.prompt}` }],
+      //messages: [{ role: "user", content: "1 day meal for pescatarian" }],
       //instruction: prompt,
       //max_tokens: 1000,   
 
