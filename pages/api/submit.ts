@@ -4,6 +4,7 @@ import OpenAI from 'openai';
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   
+  /*
   //if (req.body !== undefined) {
 
     const openai = new OpenAI({
@@ -23,8 +24,9 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     //console.log(nextapo)
     //res.status(400).json({ text: "No prompt provided." });
   //}
+  */
   
-  //res.status(200).json({ text: `${req.body}` });
+  res.status(200).json({ text: `${req.body[0].prompt}` });
 };
 
 
