@@ -1,10 +1,8 @@
 import OpenAI from "openai";
 //import type { NextApiRequest, NextApiResponse } from 'next';
-import {Request, Response} from 'express'
 
 //export default async (req: NextApiRequest, res: NextApiResponse) => {
-export default async (req: Request, res: Response) => {
-//export default async (req: Request, res: Response) => {
+export default async (req: any, res: any) => {
 
   console.log(req.body.prompt);
   if (req.body.prompt !== undefined) {
