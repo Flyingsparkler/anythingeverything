@@ -13,7 +13,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
     console.log("test2" + obj.prompt);
     const completion = await openai.chat.completions.create({
       model: "gpt-3.5-turbo",
-      messages: [{ role: "user", content: `${obj.prompt}` }],
+      messages: [{ role: "user", content: obj.prompt }],
       //instruction: prompt,
       //max_tokens: 1000,   
 
