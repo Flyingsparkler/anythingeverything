@@ -6,11 +6,10 @@ const openai = new OpenAI({
 });
 
 export default async (req: NextApiRequest, res: NextApiResponse) => {
-
   const obj = JSON.parse(req.body);
   console.log("test" + req.body);
-  if (obj.prompt !== undefined) {
-    
+  if ('prompt' in obj !== undefined) {
+    console.log("test1");
     const completion = await openai.chat.completions.create({
       model: "gpt-3.5-turbo",
       messages: [{ role: "user", content: `${obj.prompt}` }],
@@ -27,7 +26,8 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
 };
 
 
-/*export default async (req, res) => {
+/*
+export default async (req, res) => {
 
   console.log(req.body.prompt);
   if (req.body.prompt !== undefined) {

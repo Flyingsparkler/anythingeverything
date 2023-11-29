@@ -1,4 +1,3 @@
-
 import 'bootstrap/dist/css/bootstrap.css';
 import Head from "next/head";
 import React, { FormEvent, useState } from "react";
@@ -6,7 +5,6 @@ import ReactMarkdown from 'react-markdown';
 
 
 export default function Page() {
-  
   
   const [formData, setFormData] = useState({
     cuisine: '',
@@ -36,9 +34,9 @@ export default function Page() {
 
     fetch('/api/submit', {
       method: 'POST',
-      headers: {
+      /*headers: {
         'Content-Type': 'application/json',
-      },
+      },*/
       body: JSON.stringify({prompt: prompt}),
     })
       .then((response) => response.json())
