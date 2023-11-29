@@ -12,7 +12,7 @@ const openai = new OpenAI({
   apiKey: process.env["OPENAI_API_KEY"],
 });
 
-export default async function handler(req, res) {
+export default async function handler(res, req) {
   console.log("prompt: " + req.body);
   console.log("prompt1: " + req.body.prompt);
   if (req.body.prompt !== undefined) {
