@@ -38,22 +38,24 @@ export default function Page() {
     console.log("prompt" + prompt)
     setIsLoading(true)
 
-    fetch('/api/submit', {
-      method: 'POST',
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({prompt: prompt}),
-    })
-      .then((response) => response.json())
-      .then((data) => {
-        setIsLoading(false)
-        console.log(data.text);
-        setResponse(data.text);
+    useEffect(() => {
+      fetch('/api/submit', {
+        method: 'POST',
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({prompt: prompt}),
       })
-      .catch((error) => {
-        console.error("error"); // Handle any errors
-      });
+        .then((response) => response.json())
+        .then((data) => {
+          setIsLoading(false)
+          console.log(data.text);
+          setResponse(data.text);
+        })
+        .catch((error) => {
+          console.error("error"); // Handle any errors
+        });
+      }, [])
   };
   return (
     <div className="container">
