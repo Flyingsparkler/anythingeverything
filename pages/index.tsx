@@ -44,7 +44,6 @@ export default function Page() {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({prompt: prompt}),
-      
     })
       .then((response) => response.json())
       .then((data) => {
