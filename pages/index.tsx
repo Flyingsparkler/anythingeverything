@@ -35,6 +35,7 @@ export default function Page() {
     const prompt = "Hello ChatGPT, please suggest a " + formData.noOfDays + " days meals plan with recipes for a " + formData.diet + " with cuisines, " + formData.cuisine + " in markdown format.";
     setResponse("");
     console.log("Getting response from OpenAI"); 
+    console.log("prompt" + prompt)
     setIsLoading(true)
 
     fetch('/api/submit', {
