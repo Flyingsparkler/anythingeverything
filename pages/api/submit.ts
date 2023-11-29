@@ -4,7 +4,7 @@ import OpenAI from 'openai';
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   
-  if (req.body !== undefined) {
+  //if (req.body !== undefined) {
 
     const openai = new OpenAI({
       apiKey: process.env["OPENAI_API_KEY"],
@@ -16,16 +16,15 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       //messages: [{ role: "user", content: "1 day meal for pescatarian" }],
       //instruction: prompt,
       //max_tokens: 1000,   
-
-      //model: "text-davinci-003",
-      //prompt: `${req.body.prompt}`,
     });
     console.log(completion.choices[0].message.content);
     res.status(200).json({ text: `${completion.choices[0].message.content}` });
-  } else {
+  //} else {
     //console.log(nextapo)
-    res.status(400).json({ text: "No prompt provided." });
-  }
+    //res.status(400).json({ text: "No prompt provided." });
+  //}
+  
+  //res.status(200).json({ text: `${req.body}` });
 };
 
 
