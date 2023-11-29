@@ -18,11 +18,11 @@ export default async function handler(
 ) {
   console.log("prompt: " + req.body);
   console.log("prompt1: " + req.body.prompt);
-  if (req.body !== undefined) {
+  if (req.body.prompt !== undefined) {
     const completion = await openai.chat.completions.create({
       model: "gpt-3.5-turbo",
       //messages: [{ role: "user", content: `${req.body.prompt}` }],
-      messages: [{ role: "user", content: `${req.body}` }],
+      messages: [{ role: "user", content: req.body.prompt }],
       //instruction: prompt,
       //max_tokens: 1000,   
 
