@@ -19,7 +19,7 @@ export default function Page() {
   });
         
   const [isLoading, setIsLoading] = useState<boolean>(false)
-  const [error, setError] = useState<string | null>(null)
+  const [err, setErr] = useState<string | null>(null)
   const [response, setResponse] = useState("");
 
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -52,7 +52,7 @@ export default function Page() {
         setResponse(data.text);
       })
       .catch((error) => {
-        console.error("error"); // Handle any errors
+        console.error(error);
       });
   };
   return (
@@ -62,7 +62,7 @@ export default function Page() {
           <h1>Gastronomy on Autopilot</h1>
           <p>Personalised meal plan with recipes based on your food preference and completed with a grocery list to easily pick up the needed ingredients from the store.</p>
           <div className="form-group">
-          {error && <div style={{ color: 'red' }}>{error}</div>}
+          {err && <div style={{ color: 'red' }}>{err}</div>}
           </div>
           <form onSubmit={handleSubmit} className="form-horizontal">
             <div className="form-group">
