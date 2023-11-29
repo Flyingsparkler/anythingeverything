@@ -52,7 +52,7 @@ export default function Page() {
         setResponse(data.text);
       })
       .catch((error) => {
-        console.error(error); // Handle any errors
+        console.error("error"); // Handle any errors
       });
   };
   return (
