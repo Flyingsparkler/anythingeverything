@@ -22,7 +22,7 @@ export default async function handler(
     const completion = await openai.chat.completions.create({
       model: "gpt-3.5-turbo",
       //messages: [{ role: "user", content: `${req.body.prompt}` }],
-      messages: [{ role: "user", content: `${req.body.prompt}` }],
+      messages: [{ role: "user", content: req.body.prompt }],
       //instruction: prompt,
       //max_tokens: 1000,   
 
