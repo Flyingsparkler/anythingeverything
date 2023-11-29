@@ -40,10 +40,15 @@ export default function Page() {
 
     fetch('/api/submit', {
       method: 'POST',
-      headers: {
+      /*headers: {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({prompt: prompt}),
+      */
+      headers: {
+        'Content-Type': 'text/plain',
+      },
+      body: prompt,
     })
       .then((response) => response.json())
       .then((data) => {
