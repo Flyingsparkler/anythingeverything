@@ -2,10 +2,16 @@
 import 'bootstrap/dist/css/bootstrap.css';
 import Head from "next/head";
 import React, { FormEvent, useState } from "react";
-import ReactMarkdown from 'react-markdown'
+import ReactMarkdown from 'react-markdown'; 
+//import TagManager from 'react-gtm-module'; 
 
 export default function Page() {
   
+  /*const tagManagerArgs = {
+    gtmId: 'GTM-PF7B8BR5'
+  }
+  TagManager.initialize(tagManagerArgs); 
+  */
   const [formData, setFormData] = useState({
     cuisine: '',
     diet: '',
@@ -89,7 +95,7 @@ export default function Page() {
       </div>
       <div className="row">
         <div className="col">
-        <br/><br/><ReactMarkdown children={response} />
+        <br/><br/><ReactMarkdown>{response}</ReactMarkdown>
         </div> 
       </div>
     </div>
