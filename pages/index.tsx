@@ -2,7 +2,10 @@ import 'bootstrap/dist/css/bootstrap.css';
 import Head from "next/head";
 import React, { FormEvent, useState } from "react";
 import ReactMarkdown from 'react-markdown'; 
+import ReactGA from 'react-ga4';
 
+ReactGA.initialize("G-R7CHWDXJPZ");
+ReactGA.send({ hitType: "pageview", page: "/mealplanner", title: "Meal Planner" });
 
 export default function Page() {
   
